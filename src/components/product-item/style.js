@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#FFF',
     fontSize: 30,
-        fontWeight: 'bold',
+    fontWeight: 'bold',
   },
   details: {
   fontFamily: 'OpenSans-Regular',
