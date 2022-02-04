@@ -1,9 +1,10 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ShopStackNavigation from './shop';
 import CartStackNavigation from './cart';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { NavigationContainer } from '@react-navigation/native';
+import OrderStackNavigation from './order';
+import React from 'react';
+import ShopStackNavigation from './shop';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ const AppNavigation = () => {
                 headerShown: false,
             }}>
                 <BottomTabs.Screen
-                    name='Shop'
+                    name='Servicios'
                     component={ShopStackNavigation} 
                     options={{
                         tabBarIcon: ({ focused }) => (
@@ -24,14 +25,24 @@ const AppNavigation = () => {
                         
                 />
                 <BottomTabs.Screen
-                    name='Cart'
+                    name='Carrito'
                     component={CartStackNavigation}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <Ionicons name='cart-outline' size={20} />
                         )
                     }} 
-                    />
+                />
+                 {/*
+              <BottomTabs.Screen
+                    name='Compras'
+                    component={OrderStackNavigation}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Ionicons name='folder-open-outline' size={20} />
+                        )
+                    }} 
+                /> */ }
             </BottomTabs.Navigator>
         </NavigationContainer>
     )

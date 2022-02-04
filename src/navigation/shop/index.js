@@ -22,7 +22,7 @@ const ShopStackNavigation = () => {
                 }
             }}
         >
-            <Stack.Screen name="Categories" component={Categories} />
+            <Stack.Screen name="Categorias" component={Categories} />
             <Stack.Screen 
                 name="Products"
                 component={Products}
