@@ -6,15 +6,15 @@ import React from 'react';
 import ShopStackNavigation from './shop';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const BottomTabs = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const AppNavigation = () => {
     return (
         <NavigationContainer >
-            <BottomTabs.Navigator initialRouteName='Shop' screenOptions={{
+            <Tab.Navigator initialRouteName='Shop' screenOptions={{
                 headerShown: false,
             }}>
-                <BottomTabs.Screen
+                <Tab.Screen
                     name='Servicios'
                     component={ShopStackNavigation} 
                     options={{
@@ -24,7 +24,7 @@ const AppNavigation = () => {
                     }}
                         
                 />
-                <BottomTabs.Screen
+                <Tab.Screen
                     name='Carrito'
                     component={CartStackNavigation}
                     options={{
@@ -34,7 +34,7 @@ const AppNavigation = () => {
                     }} 
                 />
                  {/*
-              <BottomTabs.Screen
+              <Tab.Screen
                     name='Compras'
                     component={OrderStackNavigation}
                     options={{
@@ -43,7 +43,7 @@ const AppNavigation = () => {
                         )
                     }} 
                 /> */ }
-            </BottomTabs.Navigator>
+            </Tab.Navigator>
         </NavigationContainer>
     )
 }
