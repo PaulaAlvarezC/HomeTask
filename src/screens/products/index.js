@@ -8,13 +8,12 @@ import { filterServices, selectServices } from '../../store/actions/services.act
 import { useDispatch, useSelector } from 'react-redux';
 
 import ProductItem from '../../components/product-item/index';
-import { SERVICES } from '../../utils/data/services';
 import styles from './style';
 
-const Products = ({navigation, route}) => {
+const Products = ({navigation}) => {
  const dispatch = useDispatch();
- const category = useSelector(state => state.categories.selected);
  const categoryServices = useSelector(state => state.services.filteredServices);
+ const category = useSelector(state => state.categories.selected);
  
  const handleSelectedProduct = (item) => {
    dispatch(selectServices(item.id));
@@ -22,7 +21,7 @@ const Products = ({navigation, route}) => {
      {
         
        name: item.name,
-       image: item.image,
+       image: item.image, 
        /*productId: item.id,
        product: item,
        image: item.image,*/
@@ -38,7 +37,7 @@ const Products = ({navigation, route}) => {
 
   useEffect(() => {
     dispatch(filterServices(category.id));
-  }, []);
+  }, [])
  
   return (
    <SafeAreaView style={styles.container}>

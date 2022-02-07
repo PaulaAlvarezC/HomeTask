@@ -17,12 +17,14 @@ const Categories = ({navigation}) => {
 
    
    const handleSelectedCategory = (item) => {
+     
      dispatch(selectCategory(item.id));
     navigation.navigate('Products', 
       {
         /*categoryId: item.id,
         name: item.title,
-        image: item.image,*/
+        image: item.image,*/ 
+        name: item.title,
         color: item.color,
         image: item.image,
         
