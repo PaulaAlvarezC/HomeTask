@@ -7,9 +7,10 @@ import {
 
 import React from 'react';
 import styles from './style';
+import { useSelector } from 'react-redux';
 
 const ProductDetail = ({navigation, route}) => {
-   const { product } = route.params
+   const services = useSelector(state => state.services.selected); 
  
    return (
      <SafeAreaView style={styles.container}>
@@ -17,20 +18,21 @@ const ProductDetail = ({navigation, route}) => {
 
  
        <ImageBackground
-          source={ product.image } resizeMode="cover" style={styles.imageContainer} imageStyle={ styles.image } 
+          source={ services.image } 
+          resizeMode="cover" 
+          style={styles.imageContainer} 
+          imageStyle={ styles.image } 
         >
           <View style={styles.container}></View>
         </ImageBackground>
-       
-       
         
        <View style={styles.container}> 
-         <Text style={styles.title} >{product.name}</Text>
+         <Text style={styles.title} >{services.name}</Text>
          <View style={styles.containerPrice}> 
-         <Text style={styles.price}>$ {product.price}</Text>
-         <Text style={styles.time}> x {product.tiempo }</Text> 
+         <Text style={styles.price}>$ {services.price}</Text>
+         <Text style={styles.time}> x {services.tiempo }</Text> 
          </View>
-         <Text style={styles.description}> {product.description}</Text> 
+         <Text style={styles.description}> {services.description}</Text> 
        </View>
      </SafeAreaView>
    );
