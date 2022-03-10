@@ -12,11 +12,7 @@ const Perfil = ({ navigation }) => {
 
   
 
-    init().then(() => {
-        console.log('DB initialized');
-    }).catch(err => {
-        console.log('DB initialization failed', err);
-    });
+     
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [edad, setEdad] = useState('');

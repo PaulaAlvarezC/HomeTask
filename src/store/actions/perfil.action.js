@@ -30,7 +30,7 @@ export const addPerfil = (nombre, apellido, edad, image) => {
                 }
             });
             console.log('resultado: '+result);
-            console.warn('add', result);
+           // console.warn('add', result);
         } catch (e) {
             console.log(e);
         }
