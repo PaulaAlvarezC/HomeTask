@@ -1,11 +1,13 @@
 import RNFS from 'react-native-fs';
-import { insertPerfil } from '../db';
+import { insertPerfil } from '../../db';
 
 export const ADD_PERFIL = 'ADD_PERFIL' 
 
 
 
 export const addPerfil = (nombre, apellido, edad, image) => {
+
+    //console.log(nombre, apellido, edad, image);
      
     return async dispatch => {
 
@@ -27,7 +29,7 @@ export const addPerfil = (nombre, apellido, edad, image) => {
                     image: Path, 
                 }
             });
-            
+            console.log(result);
             console.warn('add', result);
         } catch (e) {
             console.log(e);

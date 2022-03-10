@@ -1,8 +1,9 @@
-import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useRef, useState } from 'react';
 
 import ImageSelector from '../../components/ImageSelector'
 import Input from '../../components/input';
+import { addPerfil } from '../../store/actions/perfil.action';
 import styles from "./style";
 import { useDispatch } from 'react-redux'
 
@@ -16,11 +17,30 @@ const Perfil = ({ navigation }) => {
     const dispatch = useDispatch() ;
     const [image, setImage] = useState(''); 
 
-   
+    const onchange = (value, type) => {
+        if(type === 'nombre') {
+            setNombre(value)
+        }
+        if(type === 'apellido') {
+            setApellido(value)
+        }
+        if(type === 'edad') {
+            setEdad(value)
+        }
+
+        /*if(nombreInput.current.state.validate && passwordInput.current.state.validate) {
+                setIsNotValid(false);
+        }*/
+    }
 
     const handleSave = () => {
         dispatch(addPerfil(nombre, apellido, edad, image))
-        navigation.navigate('Servicios');
+        //navigation.navigate('Servicios');
+        
+            Alert.alert(
+               'Perfil Guardado'
+            )
+         
     }
 
     const handleOnImage = (uri) => {
@@ -42,7 +62,7 @@ const Perfil = ({ navigation }) => {
                         type='text'
                         autoCapitalize="none"
                         autoCorrect={false}
-                        onChangeInput={(value) => onchange(value, 'email')}
+                        onChangeInput={(value) => onchange(value, 'nombre')}
                         maxLength={60}
                     />
                 <Input 
@@ -54,7 +74,7 @@ const Perfil = ({ navigation }) => {
                         type='text'
                         autoCapitalize="none"
                         autoCorrect={false}
-                        onChangeInput={(value) => onchange(value, 'email')}
+                        onChangeInput={(value) => onchange(value, 'apellido')}
                         maxLength={60}
                     />
                 <Input 
@@ -66,7 +86,7 @@ const Perfil = ({ navigation }) => {
                         type='number'
                         autoCapitalize="none"
                         autoCorrect={false}
-                        onChangeInput={(value) => onchange(value, 'email')}
+                        onChangeInput={(value) => onchange(value, 'edad')}
                         maxLength={60}
                     />
                      <TouchableOpacity style={styles.button} onPress={() => handleSave()}>
