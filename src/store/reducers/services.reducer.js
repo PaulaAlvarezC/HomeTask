@@ -18,7 +18,7 @@ const ServiceReducer = (state = initialState, action) => {
         case FILTER_SERVICES:
             return {
                 ...state,
-                filteredServices: state.services.find(service => service.category === action.categoryId)
+                filteredServices: state.services.filter(service => service.category === action.categoryId)
             }
         default:
             return state;

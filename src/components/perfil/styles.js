@@ -15,26 +15,23 @@ const styles = StyleSheet.create({
   header: {
     flex: 1
   },
-  date: {
-        fontFamily: 'Lato-Regular',
-        fontSize: 20,
-  },
-    details: {
-      flex: 1,
-      flexDirection: "row",
-      flexWrap: "wrap",
-      alignItems: 'center',
-      justifyContent: 'space-between',
-  },
-  total: {
-    fontFamily: 'Lato-Bold',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-    icon:{
-      color: COLORS.primary,
-      
-    }
+   
+  button: {
+    margin: 12,
+    backgroundColor: COLORS.primary,
+    padding: 12,
+    borderRadius: 10,
+    flexDirection: "row", 
+    justifyContent: 'center',
+    alignContent: 'center',   
+    alignItems: 'center',
+},
+textButton: {
+    color: COLORS.blanco,
+    fontFamily: 'Lato-Regular',
+    fontSize: 17,   
+    textAlign: "center",
+}
   });
 
 

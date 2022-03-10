@@ -1,5 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 
+import { COLORS } from "../../utils/constants/colors";
+
 const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         textAlign: "center",
-        color: '#FFF'
+        color: COLORS.blanco,
     },
     imageContainer: {
       flex: 1,

@@ -13,28 +13,21 @@ const styles = StyleSheet.create({
         bottomTopColor: "#ccc",
         borderTopWidth: 1,
     },
-    confirm: {
+    button: {
+        margin: 12,
         backgroundColor: COLORS.primary,
         padding: 12,
         borderRadius: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection: "row", 
+        justifyContent: 'center',
+        alignContent: 'center',   
+        alignItems: 'center',
     },
-    total: {
-        flexDirection: "row",
-    },
-    text: {
-        fontSize: 18,
-        fontFamily: 'Lato-Regular',
+    textButton: {
         color: COLORS.blanco,
-        
-    },
-    textConfirm:{
-        fontSize: 18,
         fontFamily: 'Lato-Regular',
-        color: COLORS.blanco,
-        fontWeight: 'bold', 
+        fontSize: 17,   
+        textAlign: "center",
     }
 });
 

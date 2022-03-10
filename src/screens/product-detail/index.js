@@ -2,15 +2,21 @@ import {
    ImageBackground,
    SafeAreaView,
    Text,
+   TouchableOpacity,
    View
 } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
 import React from 'react';
+import { addItem } from '../../store/actions/cart.action';
 import styles from './style';
-import { useSelector } from 'react-redux';
 
 const ProductDetail = ({navigation, route}) => {
+   const dispatch = useDispatch();
    const services = useSelector(state => state.services.selected); 
+   const handleAddItemCart = () => {
+        dispatch(addItem(services));
+   }
  
    return (
      <SafeAreaView style={styles.container}>
@@ -33,6 +39,10 @@ const ProductDetail = ({navigation, route}) => {
          <Text style={styles.time}> x {services.tiempo }</Text> 
          </View>
          <Text style={styles.description}> {services.description}</Text> 
+        <TouchableOpacity style={styles.button} onPress={() => handleAddItemCart()}>
+                    <Text style={styles.textButton}>Agregar al carrito</Text> 
+        </TouchableOpacity>
+        
        </View>
      </SafeAreaView>
    );

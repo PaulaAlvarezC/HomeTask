@@ -1,6 +1,9 @@
 import { Dimensions, StyleSheet } from "react-native";
 
+import { COLORS } from "../../utils/constants/colors";
+
 const { height } = Dimensions.get("window"); 
+
 
 const styles = StyleSheet.create({
     container: {
@@ -27,14 +30,14 @@ const styles = StyleSheet.create({
       fontFamily: 'Pacifico-Regular',
       fontSize: 18, 
       margin: 5, 
-      color: '#1B0077',
+      color: COLORS.accent,
       fontWeight: 'bold',
     },
     time: {
       fontFamily: 'Pacifico-Regular',
       fontSize: 17, 
       margin: 5, 
-      color: '#A1A2A4',
+      color: COLORS.gray,
       fontWeight: 'bold',
     },
     containerPrice:{
@@ -49,6 +52,17 @@ const styles = StyleSheet.create({
     },
     image:{  
       borderRadius: 30, 
+    },
+    button: {
+      backgroundColor: COLORS.primary,
+      padding: 12,
+      borderRadius: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    textButton: {
+      color: COLORS.blanco,
     }
   });
 

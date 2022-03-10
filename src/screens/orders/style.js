@@ -1,3 +1,4 @@
+import { COLORS } from "../../utils/constants/colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
     },
     confirm: {
-        backgroundColor: "#00a680",
+        backgroundColor: COLORS.primary,
         padding: 12,
         borderRadius: 10,
         flexDirection: "row",
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         fontFamily: 'Lato-Regular',
-        color: "#212121",
+        color: COLORS.blanco,
     }
 });
 

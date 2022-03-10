@@ -7,13 +7,16 @@ import React, { useEffect } from 'react';
 import { filterServices, selectServices } from '../../store/actions/services.action';
 import { useDispatch, useSelector } from 'react-redux';
 
-import ProductItem from '../../components/product-item/index';
+import ProductItem from '../../components/product-item';
 import styles from './style';
 
 const Products = ({navigation}) => {
+  
  const dispatch = useDispatch();
- const categoryServices = useSelector(state => state.services.filteredServices);
+ const categoryServices = useSelector(state => state.services.filteredServices); 
  const category = useSelector(state => state.categories.selected);
+ 
+
  
  const handleSelectedProduct = (item) => {
    dispatch(selectServices(item.id));
@@ -29,6 +32,8 @@ const Products = ({navigation}) => {
    );
  }
 
+ 
+
  const renderProducts= ({item}) => {
    return (
      <ProductItem item={item} onSelected={handleSelectedProduct} />
@@ -43,10 +48,13 @@ const Products = ({navigation}) => {
    <SafeAreaView style={styles.container}>
    <View style={styles.container}>
      <FlatList
+         
         data={categoryServices}
         renderItem={renderProducts}
         keyExtractor={item => item.id}
+        
       />
+       
    </View>
  </SafeAreaView>
   );

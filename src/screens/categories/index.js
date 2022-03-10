@@ -14,11 +14,9 @@ const Categories = ({navigation}) => {
    const dispatch = useDispatch();
    const categories = useSelector(state => state.categories.categories);
    
-
-   
+    
    const handleSelectedCategory = (item) => {
-     
-     dispatch(selectCategory(item.id));
+    dispatch(selectCategory(item.id));
     navigation.navigate('Products', 
       {
         /*categoryId: item.id,

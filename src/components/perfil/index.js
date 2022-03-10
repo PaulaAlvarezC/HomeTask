@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import styles from './styles';
 
-const OrderItem = ({item, onDelete}) => {
+const Perfil = ({item, onDelete}) => {
   const formatDate = (time) => {
     const date = new Date(time);
     return date.toLocaleDateString();
@@ -36,4 +36,4 @@ const OrderItem = ({item, onDelete}) => {
 
 
 
-export default OrderItem;
+export default Perfil;

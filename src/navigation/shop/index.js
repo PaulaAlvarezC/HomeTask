@@ -28,9 +28,9 @@ const ShopStackNavigation = () => {
                 component={Products}
                 options={({ route }) => ({
                     title: route.params.name,
-                    headerStyle: {
+                    /*headerStyle: {
                         backgroundColor: route.params.color
-                    },
+                    },*/
                 })}
             />
             <Stack.Screen 

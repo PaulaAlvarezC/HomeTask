@@ -1,13 +1,17 @@
 import { Dimensions, StyleSheet } from "react-native";
 
+import { COLORS } from '../../utils/constants/colors'
+
 const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: height / 4,
+    height: height / 10,
     borderRadius: 6,
-    margin: 15,
+    margin: 3,
+    borderColor: COLORS.gray,
+    borderWidth: 0.5, 
   },
   containerTouchable: {
       flex: 1,

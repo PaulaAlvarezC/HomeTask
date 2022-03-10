@@ -22,9 +22,6 @@ const ProductItem = ({item, onSelected}) => {
             <View>
                 <Text style={styles.name}>{item.name}</Text>
             </View>
-            <View>
-                 
-            </View>
           
       </TouchableOpacity>
       </ImageBackground>

@@ -1,20 +1,25 @@
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { confirmCart, removeItem } from "../../store/actions/cart.action";
+import { useDispatch, useSelector } from "react-redux";
 
-import { CART } from "../../utils/data/cart";
 import CartItem from "../../components/cart-item";
 import React from "react";
 import styles from "./styles";
 
-const Cart = () => {
-    const items = CART;
-    const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+const Cart = ({navigation}) => {
+    const dispatch = useDispatch();
+    const items = useSelector(state => state.cart.items);
+    const total = useSelector(state => state.cart.total);
 
     const handleConfirm = () => {
-        console.warn("Confirmar compra");
+        /*console.warn("Confirmar compra");*/
+        dispatch(confirmCart(items, total));
+        navigation.navigate("Ordenes");
     }
 
     const handleDelete = (id) => {
-        console.warn("Eliminar item", id);
+       /* console.warn("Eliminar item", id);*/
+       dispatch(removeItem(id));
     }
 
     const renderItems = (data) => (
@@ -31,7 +36,7 @@ const Cart = () => {
             </View>
             <View style={styles.footer}>
                 <TouchableOpacity style={styles.confirm} onPress={() => handleConfirm()}>
-                    <Text>Confirmar</Text>
+                    <Text style={styles.textConfirm}>Confirmar</Text>
                     <View style={styles.total}>
                         <Text style={styles.text}>Total:</Text>
                         <Text style={styles.text}>$ {total}</Text>

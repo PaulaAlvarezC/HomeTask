@@ -1,16 +1,15 @@
 import { COLORS } from '../../utils/constants/colors';
-import Cart from '../../screens/cart';
-import Orders from '../../screens/orders';
+import Perfil from '../../screens/perfil';
 import { Platform } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const CartStackNavigation = () => {
+const PerfilStackNavigation = () => {
     return (
         <Stack.Navigator
-            initialRouteName='Cart'
+            initialRouteName='Perfil'
             screenOptions={{
                 headerStyle: {
                     backgroundColor: Platform.OS === 'android' ? COLORS.primary : '',
@@ -21,10 +20,10 @@ const CartStackNavigation = () => {
                 }
             }}
         >
-            <Stack.Screen name="Carrito" component={Cart} />
-            <Stack.Screen name="Ordenes" component={Orders} />
+ 
+            <Stack.Screen name="Perfil" component={Perfil} />
         </Stack.Navigator>
     )
 }
 
-export default CartStackNavigation;
+export default PerfilStackNavigation;
