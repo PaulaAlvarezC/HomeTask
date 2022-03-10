@@ -4,10 +4,19 @@ import React, { useRef, useState } from 'react';
 import ImageSelector from '../../components/ImageSelector'
 import Input from '../../components/input';
 import { addPerfil } from '../../store/actions/perfil.action';
+import { init } from '../../db';
 import styles from "./style";
 import { useDispatch } from 'react-redux'
 
 const Perfil = ({ navigation }) => {
+
+  
+
+    init().then(() => {
+        console.log('DB initialized');
+    }).catch(err => {
+        console.log('DB initialization failed', err);
+    });
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [edad, setEdad] = useState('');

@@ -26,10 +26,10 @@ export const addPerfil = (nombre, apellido, edad, image) => {
                     nombre,
                     apellido,
                     edad,
-                    image: Path, 
+                    image: Path
                 }
             });
-            console.log(result);
+            console.log('resultado: '+result);
             console.warn('add', result);
         } catch (e) {
             console.log(e);

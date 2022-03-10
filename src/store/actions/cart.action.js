@@ -32,7 +32,7 @@ export const confirmCart = (payload, total) => {
             });
             
             const resutl = await response.json();
-            console.log(resutl);
+            //console.log(resutl);
 
             dispatch({
                 type: CONFIRM_ITEM,
