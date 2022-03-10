@@ -19,8 +19,8 @@ const Perfil = ({ navigation }) => {
    
 
     const handleSave = () => {
-        dispatch(addPlace(title, image, location))
-        navigation.navigate('Direcciones')
+        dispatch(addPerfil(nombre, apellido, edad, image))
+        navigation.navigate('Servicios');
     }
 
     const handleOnImage = (uri) => {

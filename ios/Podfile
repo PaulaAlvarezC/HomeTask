@@ -12,6 +12,8 @@ target 'HomeTask' do
     :hermes_enabled => false
   )
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'HomeTaskTests' do
     inherit! :complete
     # Pods for testing
