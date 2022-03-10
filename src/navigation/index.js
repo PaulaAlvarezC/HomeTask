@@ -9,8 +9,8 @@ const AppNavigation = () => {
     return (
         <NavigationContainer >
             {
-            //isAuth ? <BottomTabsNavigator /> : <AuthNavigator />
-            isAuth ?  <AuthNavigator /> : <BottomTabsNavigator />
+            isAuth ? <BottomTabsNavigator /> : <AuthNavigator />
+            //isAuth ?  <AuthNavigator /> : <BottomTabsNavigator />
             }
         </NavigationContainer>
     )
